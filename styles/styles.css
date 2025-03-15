@@ -15,6 +15,7 @@ img, button {
     --GrayishBlue: hsl(229, 8%, 60%);
     --VeryDarkBlue: hsl(229, 31%, 21%);
     --VeryLightGrey: hsl(0, 0%, 98%);
+    --BoxColor: rgba(0, 0, 0, 0.2);
 }
 body {
     font-family: "Rubik", sans-serif;
@@ -49,7 +50,7 @@ header {
     left: 0;
     width: 100%;
     z-index: 10;  /* position 1 */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px var(--BoxColor);
 }
 .open-menu {
     position: relative;
@@ -81,15 +82,99 @@ header {
     text-transform: uppercase;
 }
 
-.main {
-    padding: 5rem 1rem;
-}
-
 
 /* Mobile and Tablet view */
 @media (max-width: 899px) {
     .lines {
         width: 90%;
         border-top: 1px solid var(--VeryLightGrey);
+        background-position-x: 20px;
+    }
+
+
+    /* styling the hero */
+    .main {
+        padding: 7rem 0;
+    }
+    
+}
+
+
+/* Mobile view */
+@media (max-width: 500px) {
+    .main {
+        overflow-x: hidden;
+    }
+    .hero-image-container {
+        position: relative;
+        /*
+        border-top-left-radius: 300px;
+        border-bottom-left-radius: 300px;
+        background-position: right center;
+        position: relative;
+        z-index: 1;
+        */
+    }
+    .hero-image-container::before{
+        content: "";
+        position: absolute;
+        background-color: var(--SoftBlue);
+        top: 60%;
+        left: 61%;
+        min-width: 350px;
+        height: 200px;
+        transform: translate(-50%, -50%);
+        border-top-left-radius: 300px;
+        border-bottom-left-radius: 300px;
+        z-index: -1;
+    }
+    .hero-content {
+        padding: 2rem 0;
+    }
+
+    /* Text styling */
+    .hero-content > h1, .hero-content > p {
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+
+    /* Button styling */
+    .hero-button-container {
+        text-align: center;
+        margin: 0.5rem;
+    }
+    .chrome-button, .firefox-button {
+        padding: 0.8rem;
+        margin: 0.3rem;
+        border: none;
+        border-radius: 0.5rem;
+        box-shadow: 5px 0px 10px var(--BoxColor);
+    }
+    .chrome-button {
+        background-color: var(--SoftBlue);
+        color: var(--VeryLightGrey);
+    }
+    .firefox-button {
+        background-color: var(--VeryLightGrey);
+        color: var(--VeryDarkBlue);
+    }
+}
+
+/* Desktop view */
+@media (min-width: 900px) {
+    .open-menu {
+        display: none;
+    }
+    .nav-links {
+        all: unset;
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+    }
+    header {
+        padding: 1.5rem 4rem;
+    }
+    .main {
+        padding: 5rem 4rem;
     }
 }
