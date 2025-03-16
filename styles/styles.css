@@ -129,13 +129,22 @@ header {
         z-index: -1;
     }
     .hero-content {
-        padding: 2rem 0;
+        padding: 2rem 1rem;
     }
 
     /* Text styling */
     .hero-content > h1, .hero-content > p {
         text-align: center;
         padding: 0.5rem 0;
+    }
+    .feature > h2, .feature-paragraph {
+        text-align: center;
+        padding: 0.5rem 1rem;
+    }
+
+    /* features section styling */
+    .feature {
+        padding: 3rem 0;
     }
 
     /* Button styling */
