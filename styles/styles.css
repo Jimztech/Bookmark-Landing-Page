@@ -5,6 +5,9 @@ img, button {
     display: inline-block;
     max-width: 100%;
 }
+span {
+    display: block;
+}
 * {
     margin: 0;
     padding: 0;
@@ -91,7 +94,6 @@ header {
         background-position-x: 20px;
     }
 
-
     /* styling the hero */
     .main {
         padding: 7rem 0;
@@ -141,10 +143,40 @@ header {
         text-align: center;
         padding: 0.5rem 1rem;
     }
+    .feature-h3, .feature-p {
+        text-align: center;
+        padding: 0.5rem 1rem;
+    }
 
     /* features section styling */
     .feature {
         padding: 3rem 0;
+    }
+    .css-container {
+        padding: 1rem 0; /* previously here*/
+    }
+    
+    .illustration-container {
+        position: relative;
+        padding: 1.8rem 0;
+    }
+    .illustration-container::before{
+        content: "";
+        position: absolute;
+        background-color: var(--SoftBlue);
+        top: 62%;
+        left: 30%;
+        border-bottom-right-radius: 80px;
+        min-width: 350px;
+        height: 220px;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+    .illustration-image {
+        padding: 2rem;
+    }
+    .speedy-span, .easy-span {
+        display: none;
     }
 
     /* Button styling */
@@ -167,7 +199,11 @@ header {
         background-color: var(--VeryLightGrey);
         color: var(--VeryDarkBlue);
     }
+    .more-info {
+        display: none;
+    }
 }
+
 
 /* Desktop view */
 @media (min-width: 900px) {
