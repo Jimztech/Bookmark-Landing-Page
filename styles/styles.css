@@ -28,6 +28,9 @@ body {
     position: relative;
     z-index: auto;
 }
+p, span {
+    color: var(--GrayishBlue);
+}
 
 
 /* Header styling */
@@ -155,6 +158,9 @@ header {
     .css-container {
         padding: 1rem 0; /* previously here*/
     }
+    .card:nth-child(2), .card:nth-child(3) {
+        display: none;
+    }
     
     .illustration-container {
         position: relative;
@@ -175,8 +181,31 @@ header {
     .illustration-image {
         padding: 2rem;
     }
-    .speedy-span, .easy-span {
-        display: none;
+    .span-header {
+        text-align: center;
+    }
+    .simple-span, .speedy-span, .easy-span {
+        padding: 0.5rem;
+    }
+
+    /* Animations for span */
+    @keyframes bounce {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.2);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+    .span-header span {
+        transition: color 0.2s ease;
+    }
+    .span-header span:active {
+        animation: bounce 1s ease-in-out;
+        color: var(--SoftRed);
     }
 
     /* Button styling */

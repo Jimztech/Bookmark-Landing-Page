@@ -12,3 +12,12 @@ openMenu.addEventListener("click", () => {
         navBar.classList.add("mobile");
     }
 });
+
+document.querySelectorAll(".span-header span").forEach(span => {
+    span.addEventListener("click", function() {
+        const cardIndex = this.getAttribute("data-card");
+        document.querySelectorAll(".card").forEach(card => {
+            card.style.display = card.getAttribute("data-index") === cardIndex ? "block" : "none";
+        });
+    });
+});
