@@ -146,7 +146,7 @@ header {
         text-align: center;
         padding: 0.5rem 1rem;
     }
-    .feature-h3, .feature-p {
+    .feature-h3, .feature-p, .download > h3, .download > p {
         text-align: center;
         padding: 0.5rem 1rem;
     }
@@ -206,6 +206,13 @@ header {
     .span-header span:active {
         animation: bounce 1s ease-in-out;
         color: var(--SoftRed);
+    }
+
+    /* Download section styling */
+    .browsers {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
     /* Button styling */
