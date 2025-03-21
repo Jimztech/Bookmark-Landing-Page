@@ -88,6 +88,15 @@ header {
     text-transform: uppercase;
 }
 
+/* styling used in all views */
+.browsers > div > span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--VeryDarkBlue);
+}
+h1, h2, h3 {
+    color: var(--VeryDarkBlue);
+}
 
 /* Mobile and Tablet view */
 @media (max-width: 899px) {
@@ -213,6 +222,60 @@ header {
         display: grid;
         grid-template-columns: 1fr;
         gap: 2rem;
+        padding: 3rem;
+    }
+    .browsers > div > section {
+        border-top: 0.4rem dotted var(--GrayishBlue);
+        margin-top: 1rem;
+    }
+    .browsers > div > div {
+        text-align: center;
+        padding: 2rem;
+    }
+    .browsers > div > span, 
+    .browsers > div > p {
+        text-align: center;
+    }
+    .chrome, .firefox, .opera {
+        border: 2px solid var(--VeryLightGrey);
+        border-radius: 1rem;
+        box-shadow: 
+            -2px 0 3px var(--BoxColor),
+            2px 0 3px var(--BoxColor),
+            0 12px 10px var(--BoxColor);
+    }
+    .browser-button {
+        padding: 1rem 2.5rem;
+        border: none;
+        border-radius: 0.5rem;
+        background-color: var(--SoftBlue);
+        color: var(--VeryLightGrey);
+    }
+
+    /* Animation style for download section buttons*/
+    .browser-button-container {
+        position: relative;
+        overflow: hidden;
+    }
+    .browser-button-container button {
+        position: relative;
+        overflow: hidden;
+    }
+    .browser-button-container button::after {
+        content: "";
+        position: absolute;
+        background: rgba(255, 255, 255, 0.5);
+        width: 10px;
+        height: 10px;
+        opacity: 0;
+        border-radius: 50%;
+        transform: scale(1);
+        transition: transform 0.6s, opacity 0.6s;
+    }
+    .browser-button-container button:active::after {
+        opacity: 1;
+        transform: scale(10);
+        transition: transform 0.6s, opacity 0.6s;
     }
 
     /* Button styling */
@@ -261,6 +324,22 @@ header {
         animation: shake 0.3s ease-in-out;
     }
 
+
+    /* questions section styling */
+    .question > h3, .question > p {
+        text-align: center;
+        padding: 0.5rem;
+    }
+    .question > h3 {
+        font-size: 2rem;
+        font-weight: 400;
+    }
+    .form-question {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+    }
 }
 
 
