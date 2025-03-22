@@ -21,3 +21,14 @@ document.querySelectorAll(".span-header span").forEach(span => {
         });
     });
 });
+
+document.querySelectorAll(".toggle-icon").forEach(toggle => {
+    toggle.addEventListener("click", function() {
+        const imgIndex = this.getAttribute("data-image");
+        document.querySelectorAll(".answer").forEach(answer => {
+            answer.style.display = answer.getAttribute("data-answer") === imgIndex 
+                ? (answer.style.display === "block" ? "none" : "block")
+                : "none";
+        });
+    });
+});

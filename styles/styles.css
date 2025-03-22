@@ -19,6 +19,7 @@ span {
     --VeryDarkBlue: hsl(229, 31%, 21%);
     --VeryLightGrey: hsl(0, 0%, 98%);
     --BoxColor: rgba(0, 0, 0, 0.2);
+    --White: hsl(0, 0%, 100%);
 }
 body {
     font-family: "Rubik", sans-serif;
@@ -95,6 +96,9 @@ header {
     color: var(--VeryDarkBlue);
 }
 h1, h2, h3 {
+    color: var(--VeryDarkBlue);
+}
+.question-1 > div > span {
     color: var(--VeryDarkBlue);
 }
 
@@ -308,7 +312,7 @@ h1, h2, h3 {
             transform: translateX(0);
         }
         25% {
-            transform: translateX(-3px);
+            transform: translateX(-2px);
         }
         50% {
             transform: translateX(3px);
@@ -322,13 +326,17 @@ h1, h2, h3 {
     }
     .hero-button-container button:active {
         animation: shake 0.3s ease-in-out;
+        background-color: var(--SoftRed);
     }
 
 
     /* questions section styling */
+    .question {
+        padding: 2rem 0;
+    }
     .question > h3, .question > p {
         text-align: center;
-        padding: 0.5rem;
+        padding: 0.5rem 2rem;
     }
     .question > h3 {
         font-size: 2rem;
@@ -337,8 +345,61 @@ h1, h2, h3 {
     .form-question {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: start;
+        padding: 1rem;
+    }
+    .question-1 > div {
+        position: relative;
+        padding: 0.5rem 0;
+    }
+    .toggle-icon {
+        display: block;
+        position: absolute;
+        left: 340px;
+        top: 50%;
+        transform: translateY(-50%); /* Centers it vertically */
+        z-index: 10; 
+    }
+    .feature-button-container {
+        text-align: center;
+    }
+    .feature-button {
+        padding: 1rem 2rem;
+        background-color: var(--SoftBlue);
+        color: var(--VeryLightGrey);
+        border: none;
+        border-radius: 0.5rem;
+        box-shadow: 0 3px var(--BoxColor);
+    }
+    .feature-button-container button:active {
+        animation: shake 0.3s ease-in-out;
+        background-color: var(--SoftRed);
+    }
+   
+    /* call to section styling */
+    .call-to-action {
+        background-color: var(--SoftBlue);
         padding: 2rem 0;
+    }
+    .call-to-action > span, .call-to-action > h4 {
+        text-align: center;
+        color: var(--White);
+    }
+    .call-to-action > span {
+        text-transform: uppercase;
+        opacity: 0.8;
+        letter-spacing: 5px;
+        font-size: 0.7rem;
+    }
+    .call-to-action > h4 {
+        font-size: 1.7rem;
+        font-weight: 400;
+    }
+    #form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
     }
 }
 

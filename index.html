@@ -210,22 +210,37 @@
       <div class="form-question">
         <!-- Question 1 -->
         <section class="question-1">
-          <span>What is Bookmark?</span>
-          <img src="./images/icon-arrow.svg" alt="">
+          <div>
+            <span>What is Bookmark?</span>
+            <img 
+              src="./images/icon-arrow.svg" 
+              alt=""
+              data-image="1"
+              class="toggle-icon"
+            >
+          </div>
 
           <!-- Answer 1 -->
-          <p hidden>
+          <p data-answer="1" class="answer" hidden>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt 
             justo eget ultricies fringilla. Phasellus blandit ipsum quis quam ornare mattis.
           </p>
         </section>
 
         <!-- Question 2 -->
-        <section class="question-2">
-          <span>How can I request a new browser?</span>
-          <img src="./images/icon-arrow.svg" alt="">
+        <section class="question-1">
+          <div>
+            <span>How can I request a new browser?</span>
+            <img 
+              src="./images/icon-arrow.svg" 
+              alt=""
+              data-image="2"
+              class="toggle-icon"
+            >
+          </div>
+
           <!-- Answer 2 -->
-          <p hidden>
+          <p data-answer="2" class="answer" hidden>
             Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, 
             ultricies non ligula. Suspendisse imperdiet. Vivamus luctus eros aliquet 
             convallis ultricies. Mauris augue massa, ultricies non ligula. 
@@ -235,12 +250,19 @@
         </section>
 
         <!-- Question 3 -->
-        <section class="question-3">
-          <span>Is there a mobile app?</span>
-          <img src="./images/icon-arrow.svg" alt="">
+        <section class="question-1">
+          <div>
+            <span>Is there a mobile app?</span>
+            <img 
+              src="./images/icon-arrow.svg" 
+              alt=""
+              data-image="3"
+              class="toggle-icon"
+            >
+          </div>
 
           <!-- Answer 3 -->
-          <p hidden>
+          <p data-answer="3" class="answer" hidden>
             Sed consectetur quam id neque fermentum accumsan. 
             Praesent luctus vestibulum dolor, ut condimentum 
             urna vulputate eget. Cras in ligula quis est pharetra mattis 
@@ -249,11 +271,19 @@
         </section>
 
         <!-- Question 4 -->
-        <section class="question-4">
-          <span>What about other Chromium browsers?</span>
-          <img src="./images/icon-arrow.svg" alt="">
+        <section class="question-1">
+          <div>
+            <span>What about other Chromium browsers?</span>
+            <img 
+              src="./images/icon-arrow.svg" 
+              alt=""
+              data-image="4"
+              class="toggle-icon"
+            >
+          </div>
+
           <!-- Answer 4 -->
-          <p hidden>
+          <p data-answer="4" class="answer" hidden>
             Integer condimentum ipsum id imperdiet finibus. Vivamus in 
             placerat mi, at euismod dui. Aliquam 
             vitae neque eget nisl gravida pellentesque non ut velit.
@@ -261,18 +291,34 @@
         </section>
       </div>
 
-      <div>
-        <button>More Info</button>
+      <div class="feature-button-container">
+        <button class="feature-button">More Info</button>
       </div>
     </section>
 
     <section class="call-to-action">
       <span>35,000+ already joined</span>
-
       <h4>
         Stay up-to-date with what we’re doing
       </h4>
-      Contact Us
+
+      <form id="form">
+        <div>
+          <input 
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter your email address"
+          >
+          <span id="email-error">
+            Whoops, make sure it is an email
+          </span>
+        </div>
+
+        <div>
+          <input type="submit" value="Contact Us">
+        </div>
+      </form>
     </section>
   </main>
 
