@@ -401,6 +401,36 @@ h1, h2, h3 {
         align-items: center;
         padding: 1rem;
     }
+    input[type=email] {
+        width: 100%;
+        padding: 15px 25px;
+        margin: 5px 0;
+        border: none;
+        color: var(--GrayishBlue);
+        border-radius: 0.4rem;
+        outline: none;
+    }
+    input[type=email]::placeholder {
+        color: var(--GrayishBlue);
+    }
+    input[type=submit] {
+        width: 100%;
+        padding: 15px 100px;
+        margin: 8px 0;
+        background-color: var(--SoftRed);
+        color: var(--VeryLightGrey);
+        border: none;
+        border-radius: 0.4rem;
+        outline: none;
+    }
+    #email-error {
+        visibility: hidden;
+    }
+
+    /* styling footer section */
+    footer {
+        background-color: var(--VeryDarkBlue);
+    }
 }
 
 
