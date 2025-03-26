@@ -103,8 +103,7 @@ h1, h2, h3 {
 }
 
 
-
-/* Testing animation */
+/* Testing animation for hero section */
 .hero-content, .hero-image-container {
     opacity: 0;
     transform: translateY(20px);
@@ -120,6 +119,24 @@ h1, h2, h3 {
         transform: translateY(0);
     }
 }
+
+/* hero-section button styling */
+.chrome-button, .firefox-button {
+    padding: 0.8rem;
+    margin: 0.3rem;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 5px 0px 10px var(--BoxColor);
+}
+.chrome-button {
+    background-color: var(--SoftBlue);
+    color: var(--VeryLightGrey);
+}
+.firefox-button {
+    background-color: var(--VeryLightGrey);
+    color: var(--VeryDarkBlue);
+}
+
 
 /* Mobile and Tablet view */
 @media (max-width: 899px) {
@@ -171,9 +188,14 @@ h1, h2, h3 {
         text-align: center;
         padding: 0.5rem 0;
     }
-    .feature > h2, .feature-paragraph {
+    .feature-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+    .feature-paragraph {
         text-align: center;
-        padding: 0.5rem 1rem;
     }
     .feature-h3, .feature-p, .download > h3, .download > p {
         text-align: center;
@@ -302,21 +324,6 @@ h1, h2, h3 {
     .hero-button-container {
         text-align: center;
         margin: 0.5rem;
-    }
-    .chrome-button, .firefox-button {
-        padding: 0.8rem;
-        margin: 0.3rem;
-        border: none;
-        border-radius: 0.5rem;
-        box-shadow: 5px 0px 10px var(--BoxColor);
-    }
-    .chrome-button {
-        background-color: var(--SoftBlue);
-        color: var(--VeryLightGrey);
-    }
-    .firefox-button {
-        background-color: var(--VeryLightGrey);
-        color: var(--VeryDarkBlue);
     }
     .more-info {
         display: none;
@@ -488,6 +495,7 @@ h1, h2, h3 {
     }
     .nav-links a:hover {
         color: var(--SoftRed);
+        cursor: pointer;
     }
     .login {
         padding: 0.35rem 1.3rem;
@@ -500,6 +508,7 @@ h1, h2, h3 {
         background-color: var(--VeryLightGrey);
         color: var(--SoftRed) !important;
         border: 2px solid var(--SoftRed);
+        cursor: pointer;
     }
     header {
         padding: 1.5rem 4rem;
@@ -542,6 +551,37 @@ h1, h2, h3 {
         gap: 1rem;
         max-width: 600px;
     }
+
+    /* Feature section */
+    .feature {
+        padding: 0 4rem;
+    }
+    .span-header {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        /* Testing out span movement*/
+        position: relative;
+        border-bottom: 2px solid var(--GrayishBlue);
+        padding-bottom: 10px;
+    }
+    .span-header span {
+        cursor: pointer;
+        position: relative;
+        padding-bottom: 10px;
+    }
+    .indicator {
+        position: absolute;
+        bottom: 0;
+        height: 3px;
+        width: 0;
+        background-color: var(--SoftRed);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .card {
+        padding: 1rem 0;
+    }
     
     /* Text styling */
     h1 {
@@ -549,5 +589,15 @@ h1, h2, h3 {
     }
     .hero-content > p {
         max-width: 500px;
+    }
+    .feature-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+    }
+    .feature-paragraph {
+        max-width: 500px;
+        text-align: center;
     }
 }

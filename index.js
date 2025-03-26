@@ -1,5 +1,8 @@
 const openMenu = document.querySelector(".open-menu");
 const navBar = document.querySelector(".nav-links");
+const spans = document.querySelectorAll(".span-header span");
+const indicator = document.querySelector(".indicator");
+const toggleButton = document.querySelectorAll(".toggle-icon");
 
 openMenu.addEventListener("click", () => {
     if(navBar.style.display === "flex") {
@@ -13,8 +16,9 @@ openMenu.addEventListener("click", () => {
     }
 });
 
-document.querySelectorAll(".span-header span").forEach(span => {
+spans.forEach(span => {
     span.addEventListener("click", function() {
+        setIndicator(this);
         const cardIndex = this.getAttribute("data-card");
         document.querySelectorAll(".card").forEach(card => {
             card.style.display = card.getAttribute("data-index") === cardIndex ? "block" : "none";
@@ -22,7 +26,7 @@ document.querySelectorAll(".span-header span").forEach(span => {
     });
 });
 
-document.querySelectorAll(".toggle-icon").forEach(toggle => {
+toggleButton.forEach(toggle => {
     toggle.addEventListener("click", function() {
         const imgIndex = this.getAttribute("data-image");
         document.querySelectorAll(".answer").forEach(answer => {
@@ -32,3 +36,11 @@ document.querySelectorAll(".toggle-icon").forEach(toggle => {
         });
     });
 });
+
+const setIndicator = (element) => {
+    indicator.style.width = `${element.offsetWidth}px`;
+    indicator.style.transform = `translateX(${element.offsetLeft}px)`
+};
+
+setIndicator(spans[0]);
+
