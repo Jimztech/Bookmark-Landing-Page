@@ -87,6 +87,7 @@ header {
 .nav-links a {
     font-size: 1.5rem;
     text-transform: uppercase;
+    color: var(--White);
 }
 
 /* styling used in all views */
@@ -138,12 +139,34 @@ h1, h2, h3 {
 }
 
 
+/* Feature illustration container section */
+.illustration-container {
+    position: relative;
+    padding: 1.8rem 0;
+}
+
+
 /* Mobile and Tablet view */
 @media (max-width: 899px) {
     .lines {
         width: 90%;
         border-top: 1px solid var(--VeryLightGrey);
         background-position-x: 20px;
+    }
+}
+
+
+/* working with toggle icon for different mobile screen sizes */
+@media (max-width: 380px) {
+    .toggle-icon {
+        left: 325px;   /* previously 340px*/
+    }
+}
+
+
+@media (min-width: 380px) and (max-width: 500px) {
+    .toggle-icon {
+        left: 345px;
     }
 }
 
@@ -208,11 +231,6 @@ h1, h2, h3 {
     }
     .card:nth-child(2), .card:nth-child(3) {
         display: none;
-    }
-    
-    .illustration-container {
-        position: relative;
-        padding: 1.8rem 0;
     }
     .illustration-container::before{
         content: "";
@@ -378,7 +396,6 @@ h1, h2, h3 {
     .toggle-icon {
         display: block;
         position: absolute;
-        left: 325px;   /* previously 340px*/
         top: 50%;
         transform: translateY(-50%); /* Centers it vertically */
         z-index: 10; 
@@ -417,6 +434,7 @@ h1, h2, h3 {
     .call-to-action > h4 {
         font-size: 1.7rem;
         font-weight: 400;
+        padding: 1rem;
     }
     #form {
         display: flex;
@@ -564,6 +582,7 @@ h1, h2, h3 {
         position: relative;
         border-bottom: 2px solid var(--GrayishBlue);
         padding-bottom: 10px;
+       
     }
     .span-header span {
         cursor: pointer;
@@ -573,15 +592,32 @@ h1, h2, h3 {
     .indicator {
         position: absolute;
         bottom: 0;
+        left: -15px;
         height: 3px;
         width: 0;
         background-color: var(--SoftRed);
         transition: all 0.3s ease-in-out;
     }
-
     .card {
-        padding: 1rem 0;
+        padding: 3rem 0;
+        display: flex;  
     }
+    .card:nth-of-type(2), .card:nth-of-type(3) {
+        display: none;
+    }
+    .illustration-container::before{
+        content: "";
+        position: absolute;
+        background-color: var(--SoftBlue);
+        top: 62%;
+        right: 50%;
+        border-bottom-right-radius: 80px;
+        min-width: 500px;
+        height: 330px;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+    
     
     /* Text styling */
     h1 {
