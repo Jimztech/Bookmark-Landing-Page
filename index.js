@@ -48,6 +48,7 @@ spans.forEach(span => {
 */
 
 
+// Feature section.
 spans.forEach(span => {
     span.addEventListener("click", function() {
         setIndicator(this);
@@ -65,6 +66,28 @@ spans.forEach(span => {
     });
 });
 
+const setIndicator = (element) => {
+    indicator.style.width = `${element.offsetWidth}px`;
+    indicator.style.transform = `translateX(${element.offsetLeft}px)`
+};
+
+const initializeDisplay = () => {
+    setIndicator(spans[0]);
+    cards.forEach(card => {
+        if(mediaQuery.matches) {
+            card.classList.toggle('active', card.getAttribute("data-index") === "1")
+        } else {
+            card.style.display = card.getAttribute("data-index") === "1" 
+                ? "block" : "none";
+        }
+    });
+};
+
+initializeDisplay();
+mediaQuery.addEventListener("change", initializeDisplay);
+
+
+// question section.
 toggleButton.forEach(toggle => {
     toggle.addEventListener("click", function() {
         const imgIndex = this.getAttribute("data-image");
@@ -75,10 +98,3 @@ toggleButton.forEach(toggle => {
         });
     });
 });
-
-const setIndicator = (element) => {
-    indicator.style.width = `${element.offsetWidth}px`;
-    indicator.style.transform = `translateX(${element.offsetLeft}px)`
-};
-
-setIndicator(spans[0]);
