@@ -3,6 +3,8 @@ const navBar = document.querySelector(".nav-links");
 const spans = document.querySelectorAll(".span-header span");
 const indicator = document.querySelector(".indicator");
 const toggleButton = document.querySelectorAll(".toggle-icon");
+const mediaQuery = window.matchMedia("(min-width: 900px)");
+const cards = document.querySelectorAll(".card");
 
 openMenu.addEventListener("click", () => {
     if(navBar.style.display === "flex") {
@@ -16,6 +18,7 @@ openMenu.addEventListener("click", () => {
     }
 });
 
+/*
 spans.forEach(span => {
     span.addEventListener("click", function() {
         setIndicator(this);
@@ -23,6 +26,42 @@ spans.forEach(span => {
         document.querySelectorAll(".card").forEach(card => {
             card.style.display = card.getAttribute("data-index") === cardIndex ? "block" : "none";
         });
+    });
+});
+
+
+// Rewriting the above code using min-width.
+spans.forEach(span => {
+    span.addEventListener("click", function() {
+        setIndicator(this);
+
+        const cardIndex = this.getAttribute("data-card");
+
+        cards.forEach(card => {
+            if(!mediaQuery.matches) {
+                card.style.display = card.getAttribute("data-index") === cardIndex 
+                    ? "block" : "none";
+            }
+        })
+    });
+});
+*/
+
+
+spans.forEach(span => {
+    span.addEventListener("click", function() {
+        setIndicator(this);
+
+        const cardIndex = this.getAttribute("data-card");
+
+        cards.forEach(card => {
+            if(!mediaQuery.matches) {
+                card.style.display = card.getAttribute("data-index") === cardIndex 
+                    ? "block" : "none";
+            } else {
+                card.classList.toggle("active", card.getAttribute("data-index") === cardIndex);
+            }
+        })
     });
 });
 
@@ -43,4 +82,3 @@ const setIndicator = (element) => {
 };
 
 setIndicator(spans[0]);
-
