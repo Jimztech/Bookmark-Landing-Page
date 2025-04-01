@@ -186,6 +186,14 @@ h1, h2, h3 {
 }
 
 
+/* footer section styling */
+.footer-logo-img {
+    width: 100px;
+    height: 120px;
+    object-fit: contain;
+}
+
+
 /* working with toggle icon for different mobile screen sizes */
 @media (max-width: 380px) {
     .toggle-icon {
@@ -455,7 +463,6 @@ h1, h2, h3 {
         padding: 15px 25px;
         margin: 5px 0;
         border: none;
-        color: var(--GrayishBlue);
         border-radius: 0.4rem;
         outline: none;
     }
@@ -495,11 +502,6 @@ h1, h2, h3 {
     .footer-card:nth-of-type(3) {
         display: flex;
         gap: 2rem;
-    }
-    .footer-logo-img {
-        width: 100px;
-        height: 120px;
-        object-fit: contain;
     }
 }
 
@@ -718,6 +720,63 @@ h1, h2, h3 {
     /* call to action styling */
     .call-to-action {
         background-color: var(--SoftBlue);
+        padding: 2rem;
+    }
+    .call-to-action > span {
+        text-align: center;
+        color: var(--White);
+        text-transform: uppercase;
+        opacity: 0.8;
+        letter-spacing: 5px;
+        font-size: 0.9rem;
+    }
+    .call-to-action > h4 {
+        max-width: 500px;
+        text-align: center;
+        margin: 0 auto;
+        color: var(--White);
+        font-size: 2rem;
+        font-weight: 400;
+        padding: 1rem;
+    }
+    #form {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+    input[type=email] {
+        width: 100%;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 0.5rem;
+        outline: none;
+    }
+    input[type=submit] {
+        padding: 15px 20px;
+        background: var(--SoftRed);
+        border: none;
+        color: var(--VeryLightGrey);
+        border-radius: 0.4rem;
+
+    }
+    input[type=email]::placeholder {
+        color: var(--GrayishBlue);
+    }
+    #email-error {
+        visibility: hidden;
+    }
+
+
+    /* styling footer section */
+    footer {
+        background-color: var(--VeryDarkBlue);
+        display: flex;
+        justify-content: space-around;
+    }
+    .footer-card:nth-of-type(2), .footer-card:nth-of-type(3) {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
     }
 
     /* Text styling */
