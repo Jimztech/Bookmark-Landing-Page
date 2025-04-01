@@ -582,6 +582,19 @@ h1, h2, h3 {
         max-width: 600px;
     }
 
+    /* hovering styling for hero-buttons */
+    .chrome-button:hover {
+        background-color: var(--White);
+        color: var(--SoftBlue);
+        border: 2px solid var(--SoftBlue);
+        cursor: pointer;
+    }
+    .firefox-button:hover {
+        background-color: var(--White);
+        color: var(--VeryDarkBlue);
+        border: 2px solid var(--VeryDarkBlue);
+    }
+
 
     /* Feature section */
     .feature {
@@ -601,6 +614,10 @@ h1, h2, h3 {
         cursor: pointer;
         position: relative;
         padding-bottom: 10px;
+    }
+    .span-header span:hover {
+        color: var(--SoftRed);
+        cursor: pointer;
     }
     .indicator {
         position: absolute;
@@ -671,6 +688,12 @@ h1, h2, h3 {
         grid-row: 2;
         grid-column: 3/4;
     }
+    .browser-button:hover {
+        background-color: var(--White);
+        color: var(--SoftBlue);
+        border: 2px solid var(--SoftBlue);
+        cursor: pointer;
+    }
 
 
     /* questions section */
@@ -694,6 +717,10 @@ h1, h2, h3 {
     .question-1 {
         padding: 0.5rem;
         border-top: 1px solid var(--GrayishBlue);
+    }
+    .question-1 > div > span:hover {
+        color: var(--SoftRed);
+        cursor: pointer;
     }
     .question-1:nth-child(4) {
         border-bottom: 1px solid var(--GrayishBlue);
@@ -759,6 +786,12 @@ h1, h2, h3 {
         border-radius: 0.4rem;
 
     }
+    input[type=submit]:hover {
+        background-color: var(--White);
+        border: 2px solid var(--SoftRed);
+        color: var(--SoftRed);
+        cursor: pointer;
+    }
     input[type=email]::placeholder {
         color: var(--GrayishBlue);
     }
@@ -777,6 +810,14 @@ h1, h2, h3 {
         display: flex;
         align-items: center;
         gap: 1rem;
+    }
+    .footer-card:nth-of-type(2) > p:hover {
+        cursor: pointer;
+        color: var(--SoftRed);
+    }
+    .footer-card:nth-of-type(3) > img:hover {
+        background-color: var(--SoftRed);
+        cursor: pointer;
     }
 
     /* Text styling */
