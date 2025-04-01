@@ -167,6 +167,13 @@ h1, h2, h3 {
         2px 0 3px var(--BoxColor),
         0 12px 10px var(--BoxColor);
 }
+.browser-button {
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--SoftBlue);
+    color: var(--VeryLightGrey);
+}
 
 
 /* Mobile and Tablet view */
@@ -297,22 +304,20 @@ h1, h2, h3 {
         color: var(--SoftRed);
     }
 
+
     /* Download section styling */
     .download {
         padding: 4rem 0;
+    }
+    .download-content {
+        text-align: center;
+        padding: 1rem;
     }
     .browsers {
         display: grid;
         grid-template-columns: 1fr;
         gap: 2rem;
         padding: 3rem;
-    }
-    .browser-button {
-        padding: 1rem 2.5rem;
-        border: none;
-        border-radius: 0.5rem;
-        background-color: var(--SoftBlue);
-        color: var(--VeryLightGrey);
     }
 
     /* Animation style for download section buttons*/
@@ -378,7 +383,7 @@ h1, h2, h3 {
     .question {
         padding: 2rem 0;
     }
-    .question > h3, .question > p {
+    .question-content {
         text-align: center;
         padding: 0.5rem 2rem;
     }
@@ -535,12 +540,14 @@ h1, h2, h3 {
         padding: 1.5rem 4rem;
     }
 
+
     /* main section styling */
     .main {
        display: flex;
        flex-direction: column;
        overflow-x: hidden;
     }
+
 
     /* Hero section styling */
     .hero {
@@ -572,6 +579,7 @@ h1, h2, h3 {
         gap: 1rem;
         max-width: 600px;
     }
+
 
     /* Feature section */
     .feature {
@@ -630,13 +638,18 @@ h1, h2, h3 {
         z-index: -1;
     }
     
+
     /* download section styling */
     .download {
         padding: 2rem;
     }
-    .download > h3, 
-    .download > p {
+    .download-content {
         text-align: center;
+        padding: 2rem;
+    }
+    .download-content > p {
+        max-width: 500px;
+        margin: 0 auto;
     }
     .browsers {
         display: grid;
@@ -657,6 +670,55 @@ h1, h2, h3 {
         grid-column: 3/4;
     }
 
+
+    /* questions section */
+    .question {
+        padding: 2rem 0;
+    }
+    .question-content {
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+    .question-content > p {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    .form-question {
+        display: grid;
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .question-1 {
+        padding: 0.5rem;
+        border-top: 1px solid var(--GrayishBlue);
+    }
+    .question-1:nth-child(4) {
+        border-bottom: 1px solid var(--GrayishBlue);
+    }
+    .toggle-icon {
+        position: absolute;
+        left: 70%;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+    .feature-button-container {
+        text-align: center;
+        margin: 1rem 0;
+    }
+    .feature-button {
+        padding: 1rem;
+        color: var(--VeryLightGrey);
+        background-color: var(--SoftBlue);
+        border: none;
+        border-radius: 0.5rem;
+    }
+
+
+    /* call to action styling */
+    .call-to-action {
+        background-color: var(--SoftBlue);
+    }
 
     /* Text styling */
     h1 {
