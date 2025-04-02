@@ -5,6 +5,7 @@ const indicator = document.querySelector(".indicator");
 const toggleButton = document.querySelectorAll(".toggle-icon");
 const mediaQuery = window.matchMedia("(min-width: 900px)");
 const cards = document.querySelectorAll(".card");
+const featureContent = document.querySelector(".feature-content");
 
 openMenu.addEventListener("click", () => {
     if(navBar.style.display === "flex") {
@@ -18,35 +19,30 @@ openMenu.addEventListener("click", () => {
     }
 });
 
-/*
-spans.forEach(span => {
-    span.addEventListener("click", function() {
-        setIndicator(this);
-        const cardIndex = this.getAttribute("data-card");
-        document.querySelectorAll(".card").forEach(card => {
-            card.style.display = card.getAttribute("data-index") === cardIndex ? "block" : "none";
-        });
-    });
-});
+// Feature animation
+document.addEventListener("DOMContentLoaded", function() {
+    function handleScroll() {
+        cards.forEach((card) => {
+            const cardTop = card.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
 
-
-// Rewriting the above code using min-width.
-spans.forEach(span => {
-    span.addEventListener("click", function() {
-        setIndicator(this);
-
-        const cardIndex = this.getAttribute("data-card");
-
-        cards.forEach(card => {
-            if(!mediaQuery.matches) {
-                card.style.display = card.getAttribute("data-index") === cardIndex 
-                    ? "block" : "none";
+            if(cardTop < windowHeight - 100) {
+                card.classList.add("show");
             }
-        })
-    });
-});
-*/
+        });
 
+        if(featureContent) {
+            const contentTop = featureContent.getBoundingClientRect().top;
+
+            if(contentTop < window.innerHeight - 100) {
+                featureContent.classList.add("show");
+            }
+        }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+});
 
 // Feature section.
 spans.forEach(span => {
