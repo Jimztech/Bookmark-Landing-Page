@@ -207,6 +207,13 @@ h1, h2, h3 {
     color: var(--VeryLightGrey);
 }
 
+.feature-button {
+    padding: 1rem;
+    color: var(--VeryLightGrey);
+    background-color: var(--SoftBlue);
+    border: none;
+    border-radius: 0.5rem;
+}
 
 /* Mobile and Tablet view */
 @media (max-width: 899px) {
@@ -214,6 +221,59 @@ h1, h2, h3 {
         width: 90%;
         border-top: 1px solid var(--VeryLightGrey);
         background-position-x: 20px;
+    }
+
+    /* Animations for span */
+    @keyframes bounce {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.2);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+    .span-header span {
+        transition: color 0.2s ease;
+    }
+    .span-header span:active {
+        animation: bounce 1s ease-in-out;
+        color: var(--SoftRed);
+    }
+
+    /* chrome and firefox button animation */
+    @keyframes shake {
+        0% {
+            transform: translateX(0);
+        }
+        25% {
+            transform: translateX(-2px);
+        }
+        50% {
+            transform: translateX(3px);
+        }
+        75% {
+            transform: translateX(-2px);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+    .hero-button-container button:active {
+        animation: shake 0.3s ease-in-out;
+        background-color: var(--SoftRed);
+    }
+
+    /* call to action styling */
+    .call-to-action {
+        background-color: var(--SoftBlue);
+        padding: 2rem 0;
+    }
+    .call-to-action > span, .call-to-action > h4 {
+        text-align: center;
+        color: var(--White);
     }
 }
 
@@ -251,13 +311,6 @@ h1, h2, h3 {
     }
     .hero-image-container {
         position: relative;
-        /*
-        border-top-left-radius: 300px;
-        border-bottom-left-radius: 300px;
-        background-position: right center;
-        position: relative;
-        z-index: 1;
-        */
     }
     .hero-image-container::before{
         content: "";
@@ -324,26 +377,6 @@ h1, h2, h3 {
         padding: 0.5rem;
     }
 
-    /* Animations for span */
-    @keyframes bounce {
-        0% {
-            transform: scale(1);
-        }
-        50% {
-            transform: scale(1.2);
-        }
-        100% {
-            transform: scale(1);
-        }
-    }
-    .span-header span {
-        transition: color 0.2s ease;
-    }
-    .span-header span:active {
-        animation: bounce 1s ease-in-out;
-        color: var(--SoftRed);
-    }
-
 
     /* Download section styling */
     .download {
@@ -395,29 +428,6 @@ h1, h2, h3 {
         display: none;
     }
 
-    /* chrome and firefox button animation */
-    @keyframes shake {
-        0% {
-            transform: translateX(0);
-        }
-        25% {
-            transform: translateX(-2px);
-        }
-        50% {
-            transform: translateX(3px);
-        }
-        75% {
-            transform: translateX(-2px);
-        }
-        100% {
-            transform: translateX(0);
-        }
-    }
-    .hero-button-container button:active {
-        animation: shake 0.3s ease-in-out;
-        background-color: var(--SoftRed);
-    }
-
 
     /* questions section styling */
     .question {
@@ -464,15 +474,7 @@ h1, h2, h3 {
         background-color: var(--SoftRed);
     }
    
-    /* call to section styling */
-    .call-to-action {
-        background-color: var(--SoftBlue);
-        padding: 2rem 0;
-    }
-    .call-to-action > span, .call-to-action > h4 {
-        text-align: center;
-        color: var(--White);
-    }
+    /* call to action section styling */
     .call-to-action > span {
         text-transform: uppercase;
         opacity: 0.8;
@@ -534,6 +536,153 @@ h1, h2, h3 {
     .footer-card:nth-of-type(3) {
         display: flex;
         gap: 2rem;
+    }
+}
+
+
+/* Tablet view */
+@media (min-width: 501px) and (max-width: 899px) {
+    .main {
+        overflow-x: hidden;
+    }
+
+    /* hero section styling */
+    .hero {
+        padding: 7rem 0;
+    }
+    .hero-image-container {
+        position: relative;
+        left: 15%;
+    }
+    .hero-image-container::before{
+        content: "";
+        position: absolute;
+        background-color: var(--SoftBlue);
+        top: 60%;
+        left: 65%;
+        min-width: 600px;
+        height: 320px;
+        transform: translate(-50%, -50%);
+        border-top-left-radius: 300px;
+        border-bottom-left-radius: 300px;
+        z-index: -1;
+    }
+    .hero-content {
+        padding: 2rem 1rem;
+    }
+    .hero-content > h1, .hero-content > p {
+        text-align: center;
+        padding: 0.5rem 2rem;
+    }
+    .hero-button-container {
+        text-align: center;
+        margin: 1rem 0;
+    }
+
+
+    /* Feature section styling */
+    .feature-content > h2, .feature-content > p {
+        text-align: center;
+        padding: 0.5rem 2rem;
+    }
+    .css-container {
+        padding: 1rem 0;
+    }
+    .span-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+    .span-header span {
+        padding: 1rem;
+        color: var(--VeryDarkBlue);
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+    .illustration-container::before {
+        content: "";
+        position: absolute;
+        background-color: var(--SoftBlue);
+        top: 62%;
+        left: 30%;
+        border-bottom-right-radius: 80px;
+        min-width: 500px;
+        height: 310px;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+    .illustration-image {
+        padding: 1.5rem;
+    }
+    .illustration-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+    }
+    .illustration-content > p {
+        text-align: center;
+        padding: 0.5rem 2.5rem;
+    }
+    .more-info {
+        display: none;
+    }
+
+
+    /* Download section styling */
+    .download {
+        padding: 2rem 0;
+    }
+    .download-content {
+        text-align: center;
+        padding: 1rem 2.5rem;
+    }
+    .download-content > h3 {
+        font-size: 2rem;
+        font-weight: 400;
+    }
+    .browsers {
+        padding: 1rem 5rem;
+    }
+    .chrome, .firefox, .opera {
+        margin: 2.5rem 0;
+    }
+
+
+    /* styling question section */
+    .question-content {
+        text-align: center;
+        padding: 0.5rem 2.5rem;
+    }
+    .form-question {
+        display: grid;
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 1rem;
+        position: relative;
+    }
+    .question-1 > div > span {
+        font-size: 1.5rem;
+    }
+    .question-1 {
+        position: relative;
+    }
+    .toggle-icon {
+        position: absolute;
+        left: 380px;
+        bottom: 25px;
+    }
+    .feature-button-container {
+        text-align: center;
+        padding: 1rem;
+    }
+
+
+    /* call to action section styling */
+    .call-to-action {
+        padding: 4rem 0;
     }
 }
 
@@ -766,13 +915,6 @@ h1, h2, h3 {
     .feature-button-container {
         text-align: center;
         margin: 1rem 0;
-    }
-    .feature-button {
-        padding: 1rem;
-        color: var(--VeryLightGrey);
-        background-color: var(--SoftBlue);
-        border: none;
-        border-radius: 0.5rem;
     }
 
 
